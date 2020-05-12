@@ -1,2 +1,2 @@
 New feature implemenented. 
-Login feture changed with new api 
+Login feature updated with new api endpoint
