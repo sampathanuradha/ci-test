@@ -1,0 +1,17 @@
+name: Verify Code and Unit Test 
+on: [push]
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Generate key
+      run: php artisan key:generate
+    - name: Composer dump auto load
+      run: composer dump-autoload
+    - name: Config cache clear
+      run: php artisan config:cache
+      name: Route cache clear
+      run: php artisan route:cache
+    - name: Execute tests (Unit and Feature tests) via PHPUnit
+      run: vendor/bin/phpunit
