@@ -13,7 +13,5 @@ jobs:
       run: php artisan key:generate
     - name: Config cache clear
       run: php artisan config:cache
-    - name: Route cache clear
-      run: php artisan route:cache
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       run: vendor/bin/phpunit
